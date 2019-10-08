@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:suizerli/LoginRoute.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,9 +10,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
+        backgroundColor: Colors.white,
       ),
-      home: LoginPage(),
+      home: LoginRoute(),
     );
   }
 }

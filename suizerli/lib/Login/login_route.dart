@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:suizerli/Login/base_authentication.dart';
 
 enum FormMode {LOGIN, SIGNUP}
+String _errorMessage = "";
 
 class LoginRoute extends StatefulWidget{
+  LoginRoute({this.auth, this.loginCallback});
+
+  final BaseAuth auth;
+  final VoidCallback loginCallback;
+
   @override
   State<StatefulWidget> createState() => _LoginPageState();
 }
@@ -14,10 +22,53 @@ class _LoginPageState extends State<LoginRoute>{
 
   String _email;
   String _password;
-  String _errorMessage;
+
 
   FormMode _formMode = FormMode.LOGIN;
   bool _isLoading;
+
+  bool _validateAndSave() {
+    final form = _formKey.currentState;
+    if (form.validate()) {
+      form.save();
+      return true;
+    } return false;
+  }
+
+  void _validateAndSubmit() async {
+    setState(() {
+      _errorMessage = "";
+      _isLoading = true;
+    });
+    if (_validateAndSave()) {
+      String userId = "";
+      try {
+        if (_formMode == FormMode.LOGIN) {
+           userId = await widget.auth.signIn(_email, _password);
+          print("Signed in user $userId");
+        } else {
+          userId = await widget.auth.signUp(_email, _password);
+          print('Signed up user $userId');
+        }
+        setState(() {
+          _isLoading = false;
+        });
+
+        if(userId.length > 0 && userId != null && _formMode == FormMode.LOGIN) {
+          widget.loginCallback();
+        }
+
+      }
+      catch (e) {
+        print('Error: $e');
+        setState(() {
+          _isLoading = false;
+          _errorMessage = e.message;
+          _formKey.currentState.reset();
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +99,7 @@ class _LoginPageState extends State<LoginRoute>{
               _showPasswordInput(),
               _showPrimaryButton(),
               _showSecondaryButton(),
+              _showErrorMessage(),
             ],
           )
       ),
@@ -140,7 +192,25 @@ class _LoginPageState extends State<LoginRoute>{
       onPressed: _formMode == FormMode.LOGIN
     ? _changeFormToSignUp
     : _changeFormToLogin);
+  }
+
+  Widget _showErrorMessage() {
+    if (_errorMessage.length > 0 && _errorMessage != null) {
+      return Text (
+        _errorMessage,
+        style: TextStyle(
+          fontSize: 13.0,
+          color: Colors.red,
+          height: 1.0,
+          fontWeight: FontWeight.w300
+        ),
+      );
+    } else {
+      return Container (
+        height: 0.0,
+      );
     }
+  }
 
 
   void _changeFormToSignUp() {
@@ -160,7 +230,6 @@ class _LoginPageState extends State<LoginRoute>{
     });
   }
 
-  void _validateAndSubmit(){
-  }
+
 
 }

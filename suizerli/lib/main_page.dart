@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:suizerli/Login/authentication.dart';
+import 'package:suizerli/Login/login_route.dart';
+import 'package:suizerli/root_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,10 +11,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
+        backgroundColor: Colors.white,
       ),
-      home: LoginPage(),
+      home: RootPage(auth: Auth(),),
     );
   }
 }

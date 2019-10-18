@@ -1,6 +1,6 @@
 # suizerli
 
-**suizerli** is a flutter project that I use for training purposes.
+[**suizerli**](https://github.com/heslegend/suizerli/blob/master/custom_assets/suizerli_logo.PNG) is a flutter project that I use for training purposes.
 
 The main idea of the app is, to allow users to recommend what they love to other users.
 A recommendation could be about a great movie, an amazing song, a special bar or a beautiful

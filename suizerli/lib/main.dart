@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:suizerli/BLOC/authentication/authentication_bloc.dart';
 import 'package:suizerli/Repository/user_repository.dart';
-import 'package:suizerli/UI/home_page.dart';
+import 'package:suizerli/UI/home/home_page.dart';
 import 'package:suizerli/UI/splash_screen.dart';
 
 import 'BLOC/authentication/authentication_event.dart';

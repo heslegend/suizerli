@@ -1,39 +1,25 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:suizerli/BLOC/authentication/authentication_bloc.dart';
 import 'package:suizerli/BLOC/authentication/authentication_event.dart';
 import 'package:suizerli/UI/authentication/navigation_exit.dart';
-import 'package:suizerli/UI/show_logo.dart';
 
-class Home extends StatefulWidget {
-  final String name;
+import '../show_logo.dart';
 
-  Home({@required this.name});
-
+class MyProfile extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _HomeState();
+  _MyProfileState createState() => _MyProfileState();
 }
 
-class _HomeState extends State<Home> {
+class _MyProfileState extends State<MyProfile> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.white, body: _body());
-  }
-
-  _signOut() {
-    try {
-      BlocProvider.of<AuthenticationBloc>(context).add(
-        LoggedOut(),
-      );
-    } catch (e) {
-      print(e);
-    }
+    return Container(child: _body());
   }
 
   Widget _body() {
     return ListView(
       children: <Widget>[
-        NavigationExit(context: context),
         ShowLogo(),
         _showText(),
         _showLogOutButton()
@@ -64,5 +50,15 @@ class _HomeState extends State<Home> {
         child: Text("LogOut"),
       ),
     );
+  }
+
+  _signOut() {
+    try {
+      BlocProvider.of<AuthenticationBloc>(context).add(
+        LoggedOut(),
+      );
+    } catch (e) {
+      print(e);
+    }
   }
 }

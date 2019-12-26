@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:suizerli/BLOC/authentication/authentication_bloc.dart';
 import 'package:suizerli/Repository/user_repository.dart';
-import 'package:suizerli/UI/home/home_page.dart';
 import 'package:suizerli/UI/splash_screen.dart';
 
 import 'BLOC/authentication/authentication_event.dart';
 import 'BLOC/authentication/authentication_state.dart';
 import 'UI/authentication/authentication_screen.dart';
+import 'UI/home/home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

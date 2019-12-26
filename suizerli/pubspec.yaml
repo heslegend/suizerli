@@ -61,7 +61,14 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+      # images
     - images/suizerli_logo.png
+
+      # icons
+    - icons/suizerli_icon.png
+    - icons/suizerli_icon_gray_thick.png
+    - icons/suizerli_icon_green.png
+    - icons/suizerli_icon_green_thick.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

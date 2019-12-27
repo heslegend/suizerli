@@ -10,7 +10,7 @@ restaurant and much, much more - just use your imagination!
 
 If a user likes your recommendation, he will spend you some suiz, which will then add to your suizbank.
 
-A first look onto the design (**work in progress**):
+A first look onto the design (**suspect to change**):
 
 - First, you will have to sign up: [**SignUpScreen**](https://github.com/heslegend/suizerli/blob/master/custom_assets/Register.png)
 

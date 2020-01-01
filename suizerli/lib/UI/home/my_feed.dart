@@ -1,8 +1,195 @@
 import 'package:flutter/material.dart';
 
-import '../show_logo.dart';
+class MyFeed extends StatefulWidget {
+  @override
+  _MyFeedState createState() => _MyFeedState();
+}
 
-class MyFeed extends StatelessWidget {
+class _MyFeedState extends State<MyFeed> {
+  static List<Widget> _recommendationList = [
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+    Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.details),
+            title: Text("Try fleur del sel!"),
+            subtitle: Text("You won't regret it!"),
+          ),
+        ],
+      ),
+    ),
+
+  ];
+
   @override
   Widget build(BuildContext context) {
     return _body();
@@ -10,21 +197,8 @@ class MyFeed extends StatelessWidget {
 
   Widget _body() {
     return ListView(
-      children: <Widget>[
-        ShowLogo(),
-        _showText(),
-      ],
+      children:  _recommendationList,
     );
   }
 
-  _showText() {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(80, 20, 50, 50),
-      child: Text(
-        'Welcome to your feed!',
-        style: TextStyle(
-            fontSize: 50, fontStyle: FontStyle.normal, color: Colors.teal),
-      ),
-    );
-  }
 }

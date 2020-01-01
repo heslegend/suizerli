@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:suizerli/UI/home/my_feed.dart';
 import 'package:suizerli/UI/home/my_profile.dart';
 import 'package:suizerli/UI/home/notifications.dart';
-import 'package:suizerli/UI/home/recommend.dart';
 
 import 'explore.dart';
 
@@ -17,13 +16,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  
   int _selectedIndex = 0;
-  
+
   static List<Widget> _widgetOptions = <Widget>[
     MyFeed(),
     Explore(),
-    Recommend(),
     Notifications(),
     MyProfile(),
   ];
@@ -32,16 +29,27 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: _buildPageView(),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(boxShadow: [
-          BoxShadow(
-              color: Colors.grey,
-              blurRadius: 20.0,
-              spreadRadius: 5.0,
-              offset: Offset(10.0, 10.0))
-        ]),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: widget(
+        child: FloatingActionButton(
+          onPressed: () {},
+          tooltip: 'Post',
+          child: ImageIcon(
+            AssetImage('icons/suizerli_icon_green.png'),
+            size: 45.0,
+            color: Colors.teal,
+          ),
+          elevation: 4.0,
+          backgroundColor: Colors.white,
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        notchMargin: 2.0,
+        clipBehavior: Clip.antiAlias,
+        color: Colors.grey,
         child: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
+          items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               title: Text("Feed"),
@@ -49,10 +57,6 @@ class _HomeState extends State<Home> {
             BottomNavigationBarItem(
               icon: Icon(Icons.search),
               title: Text("Explore"),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.add),
-              title: Text("Post"),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.library_books),
@@ -67,15 +71,14 @@ class _HomeState extends State<Home> {
           onTap: onBottomNavigationItemTapped,
           fixedColor: Colors.teal,
           unselectedItemColor: Colors.grey,
+          type: BottomNavigationBarType.fixed,
         ),
       ),
     );
   }
 
-  PageController _pageController = PageController(
-    initialPage: 0,
-    keepPage: true
-  );
+  PageController _pageController =
+      PageController(initialPage: 0, keepPage: true);
 
   void pageChanged(int index) {
     setState(() {
@@ -83,20 +86,21 @@ class _HomeState extends State<Home> {
     });
   }
 
-  Widget _buildPageView(){
+  Widget _buildPageView() {
     return PageView(
       controller: _pageController,
-    onPageChanged: (index) {
+      onPageChanged: (index) {
         pageChanged(index);
-    },
-    children: _widgetOptions,
+      },
+      children: _widgetOptions,
     );
   }
 
   void onBottomNavigationItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      _pageController.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.ease);
+      _pageController.animateToPage(index,
+          duration: Duration(milliseconds: 500), curve: Curves.ease);
     });
   }
 }

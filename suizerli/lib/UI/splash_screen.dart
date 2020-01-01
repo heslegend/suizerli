@@ -6,7 +6,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("Splash Screen"),
+        child: Image.asset('images/suizerli_logo.png'),
       ),
     );
   }

@@ -30,8 +30,7 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.white,
       body: _buildPageView(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: widget(
-        child: FloatingActionButton(
+      floatingActionButton:FloatingActionButton(
           onPressed: () {},
           tooltip: 'Post',
           child: ImageIcon(
@@ -41,11 +40,10 @@ class _HomeState extends State<Home> {
           ),
           elevation: 4.0,
           backgroundColor: Colors.white,
-        ),
       ),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
-        notchMargin: 2.0,
+        notchMargin: 4.0,
         clipBehavior: Clip.antiAlias,
         color: Colors.grey,
         child: BottomNavigationBar(

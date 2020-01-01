@@ -63,6 +63,8 @@ flutter:
   assets:
       # images
     - images/suizerli_logo.png
+    - images/green_sea.jpg
+    - images/woods.jpg
 
       # icons
     - icons/suizerli_icon.png

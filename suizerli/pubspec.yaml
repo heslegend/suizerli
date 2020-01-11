@@ -110,5 +110,9 @@ flutter:
         - asset: assets/fonts/segoeuiz.ttf
         - asset: assets/fonts/seguibl.ttf
 
+    - family:  SuizerliLogo
+      fonts:
+        - asset: assets/fonts/SuizerliLogo.ttf
+
 
 

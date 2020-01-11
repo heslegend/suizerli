@@ -58,7 +58,7 @@ class _MyFeedState extends State<MyFeed> {
           floating: true,
           expandedHeight: 150.0,
           pinned: true,
-          title: Text("SUIZERLI"),
+          title: Text("SUIZERLI."),
           flexibleSpace: FlexibleSpaceBar(
             centerTitle: true,
             background: Image.asset('images/sitting.jpg',fit: BoxFit.cover),
@@ -84,7 +84,7 @@ class _MyFeedState extends State<MyFeed> {
           ),
         ),
         SliverFixedExtentList(
-          itemExtent: 150.0,
+          itemExtent: 275.0,
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
               return Container(
@@ -96,30 +96,5 @@ class _MyFeedState extends State<MyFeed> {
         ),
       ],
     );
-  }
-}
-
-class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
-  _SliverAppBarDelegate(this._tabBar);
-
-  final _tabBar;
-
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Container(
-      child: _tabBar,
-    );
-  }
-
-  @override
-  double get maxExtent => _tabBar.preferredSize.height;
-
-  @override
-  double get minExtent => _tabBar.preferredSize.height;
-
-  @override
-  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
-    return false;
   }
 }

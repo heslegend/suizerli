@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:suizerli/Representation/Icons/suizerli_logo_icons.dart';
 import 'package:suizerli/UI/home/my_feed.dart';
 import 'package:suizerli/UI/home/my_profile.dart';
 import 'package:suizerli/UI/home/notifications.dart';
@@ -30,16 +31,13 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.white,
       body: _buildPageView(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton:FloatingActionButton(
-          onPressed: () {},
-          tooltip: 'Post',
-          child: ImageIcon(
-            AssetImage('icons/suizerli_icon_green.png'),
-            size: 45.0,
-            color: Colors.teal,
-          ),
-          elevation: 4.0,
-          backgroundColor: Colors.white,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        tooltip: 'Post',
+        child: Icon(SuizerliLogo.suizerli_logo_up,size: 35,),
+        foregroundColor: Colors.teal,
+        elevation: 4.0,
+        backgroundColor: Colors.white,
       ),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),

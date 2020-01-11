@@ -65,6 +65,7 @@ flutter:
     - images/suizerli_logo.png
     - images/green_sea.jpg
     - images/woods.jpg
+    - images/sitting.jpg
 
       # icons
     - icons/suizerli_icon.png
@@ -97,5 +98,17 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  fonts:
+    - family: SegoeUi
+      fonts:
+        - asset: assets/fonts/segoeui.ttf
+        - asset: assets/fonts/segoeuib.ttf
+        - asset: assets/fonts/segoeuii.ttf
+        - asset: assets/fonts/segoeuil.ttf
+        - asset: assets/fonts/segoeuisl.ttf
+        - asset: assets/fonts/segoeuiz.ttf
+        - asset: assets/fonts/seguibl.ttf
+
 
 

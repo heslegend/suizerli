@@ -31,8 +31,7 @@ class _MyFeedState extends State<MyFeed> {
   Widget _body() {
     return DefaultTabController(
         length: 12,
-        child: Container(
-            child: Container(height: 100, child: sliverScrollView())));
+            child: Container(height: 100, child: sliverScrollView()));
   }
 
   Widget navigationTextElement(String text) {
@@ -66,7 +65,7 @@ class _MyFeedState extends State<MyFeed> {
           bottom: TabBar(
             isScrollable: true,
             labelColor: Colors.white,
-            unselectedLabelColor: Colors.white.withOpacity(0.3),
+            unselectedLabelColor: Colors.white.withOpacity(0.5),
             tabs: <Widget>[
               Tab(text: "Art"),
               Tab(text: "Food"),

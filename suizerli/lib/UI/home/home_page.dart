@@ -28,8 +28,8 @@ class _HomeState extends State<Home> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: _buildPageView(),
+      backgroundColor: Colors.white,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
         shape: CircularNotchedRectangle(),
         notchMargin: 4.0,
         clipBehavior: Clip.antiAlias,
-        color: Colors.grey,
+        color: Colors.white,
         child: BottomNavigationBar(
           items: [
             BottomNavigationBarItem(

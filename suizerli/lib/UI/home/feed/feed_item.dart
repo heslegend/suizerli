@@ -18,6 +18,7 @@ class _FeedItemState extends State<FeedItem> {
     return Container(
       height: 270,
       child: Card(
+        color: Colors.white,
         semanticContainer: true,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
@@ -36,7 +37,7 @@ class _FeedItemState extends State<FeedItem> {
             Text(
               "Why maldon salt is the best salt!",
               style: TextStyle(
-                  fontFamily: 'SegoeUi', fontSize: 20.0, color: Colors.black),
+                  fontFamily: 'SegoeUi', fontSize: 20.0, color: Colors.teal),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),

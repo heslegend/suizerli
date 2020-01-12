@@ -72,8 +72,6 @@ flutter:
   assets:
       # images
     - images/suizerli_logo.png
-    - images/green_sea.jpg
-    - images/woods.jpg
     - images/sitting.jpg
 
       # icons
@@ -81,6 +79,19 @@ flutter:
     - icons/suizerli_icon_gray_thick.png
     - icons/suizerli_icon_green.png
     - icons/suizerli_icon_green_thick.png
+
+     # category images
+    - images/nav/nav_art.jpg
+    - images/nav/nav_bar.jpg
+    - images/nav/nav_books.jpg
+    - images/nav/nav_cinema.jpg
+    - images/nav/nav_food.jpg
+    - images/nav/nav_music.jpg
+    - images/nav/nav_outdoor.jpg
+    - images/nav/nav_sport_w.jpg
+    - images/nav/nav_tech.jpg
+    - images/nav/nav_travel.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

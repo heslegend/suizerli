@@ -1,3 +1,4 @@
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:suizerli/Representation/Icons/suizerli_logo_icons.dart';
@@ -17,6 +18,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool active = false;
   int _selectedIndex = 0;
 
   static List<Widget> _widgetOptions = <Widget>[
@@ -31,19 +33,11 @@ class _HomeState extends State<Home> {
       body: _buildPageView(),
       backgroundColor: Colors.white,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Post',
-        child: Icon(SuizerliLogo.suizerli_logo_up,size: 35,),
-        foregroundColor: Colors.teal,
-        elevation: 4.0,
-        backgroundColor: Colors.white,
-      ),
+      floatingActionButton: _flare(),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         notchMargin: 4.0,
         clipBehavior: Clip.antiAlias,
-        color: Colors.white,
         child: BottomNavigationBar(
           items: [
             BottomNavigationBarItem(
@@ -99,4 +93,25 @@ class _HomeState extends State<Home> {
           duration: Duration(milliseconds: 500), curve: Curves.ease);
     });
   }
+
+  Widget _flare(){
+    return GestureDetector(
+      child: Container(
+        height: 60,
+        width: 60,
+          child: FlareActor(
+            'assets/animations/PostFAB.flr',
+            alignment: Alignment.center,
+            animation: active ? 'go' : 'idle',
+            fit: BoxFit.fill,
+          ),
+      ),
+      onTap: () {
+        setState(() {
+          active = !active;
+        });
+      },
+    );
+  }
+
 }

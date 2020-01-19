@@ -1,3 +1,4 @@
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:suizerli/Const/images.dart';
@@ -89,7 +90,7 @@ class _MyFeedState extends State<MyFeed> {
             (BuildContext context, int index) {
           return Container(
             alignment: Alignment.center,
-            child: FeedItem(),
+            child: FeedItem(index: index,),
           );
         },
       ),
@@ -100,4 +101,5 @@ class _MyFeedState extends State<MyFeed> {
     currentIndex = index;
     setState(() {});
   }
+
 }

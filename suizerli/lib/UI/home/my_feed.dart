@@ -1,4 +1,3 @@
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:suizerli/Const/images.dart';
@@ -10,7 +9,6 @@ class MyFeed extends StatefulWidget {
 }
 
 class _MyFeedState extends State<MyFeed> {
-
   List<Image> _categoryImages = [
     navArt,
     navSports,
@@ -58,8 +56,7 @@ class _MyFeedState extends State<MyFeed> {
     );
   }
 
-
-  Widget categoryNavigationHeader(){
+  Widget categoryNavigationHeader() {
     return SliverAppBar(
       floating: true,
       expandedHeight: 200.0,
@@ -87,10 +84,12 @@ class _MyFeedState extends State<MyFeed> {
     return SliverFixedExtentList(
       itemExtent: 275.0,
       delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
+        (BuildContext context, int index) {
           return Container(
             alignment: Alignment.center,
-            child: FeedItem(index: index,),
+            child: FeedItem(
+              index: index,
+            ),
           );
         },
       ),
@@ -101,5 +100,4 @@ class _MyFeedState extends State<MyFeed> {
     currentIndex = index;
     setState(() {});
   }
-
 }

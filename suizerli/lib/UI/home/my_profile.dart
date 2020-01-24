@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:suizerli/BLOC/authentication/authentication_bloc.dart';
 import 'package:suizerli/BLOC/authentication/authentication_event.dart';
-import 'package:suizerli/UI/authentication/navigation_exit.dart';
 
 import '../show_logo.dart';
 
@@ -19,11 +18,7 @@ class _MyProfileState extends State<MyProfile> {
 
   Widget _body() {
     return ListView(
-      children: <Widget>[
-        ShowLogo(),
-        _showText(),
-        _showLogOutButton()
-      ],
+      children: <Widget>[ShowLogo(), _showText(), _showLogOutButton()],
     );
   }
 

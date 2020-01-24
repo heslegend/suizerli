@@ -1,10 +1,9 @@
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:suizerli/Representation/Icons/suizerli_logo_icons.dart';
 import 'package:suizerli/UI/home/my_feed.dart';
 import 'package:suizerli/UI/home/my_profile.dart';
 import 'package:suizerli/UI/home/notifications.dart';
+import 'package:suizerli/UI/home/post_fab.dart';
 
 import 'explore.dart';
 
@@ -17,15 +16,16 @@ class Home extends StatefulWidget {
   State<StatefulWidget> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
-  bool active = false;
-  int _selectedIndex = 0;
+// TODO somehow extract? wait for dart enums to allow returning strings
+// const values for FAB animation state
 
+class _HomeState extends State<Home> {
+  int _bottomNavigationIndex = 0;
   static List<Widget> _widgetOptions = <Widget>[
     MyFeed(),
     Explore(),
     Notifications(),
-    MyProfile(),
+    MyProfile()
   ];
 
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
       body: _buildPageView(),
       backgroundColor: Colors.white,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: _flare(),
+      floatingActionButton: PostFAB(),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         notchMargin: 4.0,
@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
               title: Text("Profile"),
             ),
           ],
-          currentIndex: _selectedIndex,
+          currentIndex: _bottomNavigationIndex,
           onTap: onBottomNavigationItemTapped,
           fixedColor: Colors.teal,
           unselectedItemColor: Colors.grey,
@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
 
   void pageChanged(int index) {
     setState(() {
-      _selectedIndex = index;
+      _bottomNavigationIndex = index;
     });
   }
 
@@ -88,30 +88,9 @@ class _HomeState extends State<Home> {
 
   void onBottomNavigationItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      _bottomNavigationIndex = index;
       _pageController.animateToPage(index,
           duration: Duration(milliseconds: 500), curve: Curves.ease);
     });
   }
-
-  Widget _flare(){
-    return GestureDetector(
-      child: Container(
-        height: 60,
-        width: 60,
-          child: FlareActor(
-            'assets/animations/PostFAB.flr',
-            alignment: Alignment.center,
-            animation: active ? 'go' : 'idle',
-            fit: BoxFit.fill,
-          ),
-      ),
-      onTap: () {
-        setState(() {
-          active = !active;
-        });
-      },
-    );
-  }
-
 }

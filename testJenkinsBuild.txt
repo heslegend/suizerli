@@ -1,1 +1,1 @@
-this file is created to try if the jenkins build server is triggered correctly
+this file is created to try if the jenkins build server is triggered correctly with blue ocean plugin

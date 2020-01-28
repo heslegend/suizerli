@@ -1,10 +1,6 @@
-import 'package:flare_flutter/flare_actor.dart';
-import 'package:flare_flutter/flare_controls.dart';
 import 'package:flutter/material.dart';
-
-const String idle_state = "idle";
-const String open_state = "open";
-const String close_state = "close";
+import 'package:suizerli/UI/home_screen/post/post_pop_up_route.dart';
+import 'package:suizerli/UI/util/icons.dart';
 
 class PostFAB extends StatefulWidget {
   PostFAB({Key key}) : super(key: key);
@@ -14,45 +10,21 @@ class PostFAB extends StatefulWidget {
 }
 
 class _PostFABState extends State<PostFAB> {
-  String _fabAnimationState = idle_state;
-  final FlareControls controls = FlareControls();
-
   @override
   Widget build(BuildContext context) {
-    print("called widget build");
     return FloatingActionButton(
-      child: Container(
-        height: 60,
-        width: 60,
-        child: FlareActor(
-          'assets/animations/PostFAB.flr',
-          alignment: Alignment.center,
-          animation: idle_state,
-          fit: BoxFit.fill,
-          controller: controls,
-        ),
+      heroTag: 'postWidget',
+      child: Icon(
+        SuizerliLogo.suizerli_logo_up,
+        color: Colors.black,
+        size: 40.0,
       ),
-      onPressed: _switchAnimationState,
+      backgroundColor: Colors.white,
+      onPressed: _onPostButtonPressed,
     );
   }
 
-  void _playOpenPostAnimation() {
-    controls.play("open");
-  }
-
-  void _playClosePostAnimation() {
-    controls.play("close");
-  }
-
-  void _switchAnimationState() {
-    setState(() {
-      if (_fabAnimationState == idle_state || _fabAnimationState == close_state) {
-        _playOpenPostAnimation();
-        _fabAnimationState = open_state;
-      } else if (_fabAnimationState == open_state) {
-        _playClosePostAnimation();
-        _fabAnimationState = close_state;
-      }
-    });
+  void _onPostButtonPressed() {
+    Navigator.of(context).push(PostPopUpRoute());
   }
 }

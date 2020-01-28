@@ -16,9 +16,6 @@ class HomeScreen extends StatefulWidget {
   State<StatefulWidget> createState() => _HomeScreenState();
 }
 
-// TODO somehow extract? wait for dart enums to allow returning strings
-// const values for FAB animation state
-
 class _HomeScreenState extends State<HomeScreen> {
   int _bottomNavigationIndex = 0;
   static List<Widget> _widgetOptions = <Widget>[

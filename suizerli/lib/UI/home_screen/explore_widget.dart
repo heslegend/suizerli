@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../show_logo.dart';
+import '../util/show_logo.dart';
 
 class Explore extends StatelessWidget {
   @override

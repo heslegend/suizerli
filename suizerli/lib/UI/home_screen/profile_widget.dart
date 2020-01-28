@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:suizerli/BLOC/authentication/authentication_bloc.dart';
 import 'package:suizerli/BLOC/authentication/authentication_event.dart';
 
-import '../show_logo.dart';
+import '../util/show_logo.dart';
 
 class MyProfile extends StatefulWidget {
   @override

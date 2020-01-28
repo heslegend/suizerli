@@ -1,25 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:suizerli/UI/home/my_feed.dart';
-import 'package:suizerli/UI/home/my_profile.dart';
-import 'package:suizerli/UI/home/notifications.dart';
-import 'package:suizerli/UI/home/post_fab.dart';
+import 'package:suizerli/UI/home_screen/feed/feed_widget.dart';
+import 'package:suizerli/UI/home_screen/profile_widget.dart';
+import 'package:suizerli/UI/home_screen/notifications_widget.dart';
+import 'package:suizerli/UI/home_screen/post/post_fab.dart';
 
-import 'explore.dart';
+import 'explore_widget.dart';
 
-class Home extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   final String name;
 
-  Home({@required this.name});
+  HomeScreen({@required this.name});
 
   @override
-  State<StatefulWidget> createState() => _HomeState();
+  State<StatefulWidget> createState() => _HomeScreenState();
 }
 
 // TODO somehow extract? wait for dart enums to allow returning strings
 // const values for FAB animation state
 
-class _HomeState extends State<Home> {
+class _HomeScreenState extends State<HomeScreen> {
   int _bottomNavigationIndex = 0;
   static List<Widget> _widgetOptions = <Widget>[
     MyFeed(),

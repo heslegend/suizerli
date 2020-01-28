@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:suizerli/BLOC/authentication/authentication_bloc.dart';
 import 'package:suizerli/Repository/user_repository.dart';
-import 'package:suizerli/UI/splash_screen.dart';
+import 'package:suizerli/UI/home_screen/home_screen.dart';
+import 'package:suizerli/UI/splash_screen/splash_screen.dart';
 
 import 'BLOC/authentication/authentication_event.dart';
 import 'BLOC/authentication/authentication_state.dart';
-import 'UI/authentication/authentication_screen.dart';
-import 'UI/home/home_page.dart';
+import 'UI/authentication_screen/authentication_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
           else if (state is Unauthenticated)
             return AuthenticationScreen(userRepository: _userRepository);
           else if (state is Authenticated)
-            return Home();
+            return HomeScreen();
           else
             return Container(child: Text("Ouuups - something went wrong"));
         },

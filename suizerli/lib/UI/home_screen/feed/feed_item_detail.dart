@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:suizerli/Representation/Icons/suizerli_logo_icons.dart';
+import 'package:suizerli/UI/util/icons.dart';
 
 class FeedItemDetail extends StatefulWidget {
   FeedItemDetail({Key key}) : super(key: key);

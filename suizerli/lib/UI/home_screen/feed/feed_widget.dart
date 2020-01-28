@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:suizerli/Const/images.dart';
-import 'package:suizerli/UI/home/feed/feed_item.dart';
+import 'package:suizerli/UI/home_screen/feed/feed_item.dart';
 
 class MyFeed extends StatefulWidget {
   @override

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:suizerli/Representation/Icons/suizerli_logo_icons.dart';
-import 'package:suizerli/UI/home/feed/feed_item_detail.dart';
+import 'package:suizerli/UI/home_screen/feed/feed_item_detail.dart';
+import 'package:suizerli/UI/util/icons.dart';
+
 
 class FeedItem extends StatefulWidget {
   final int _index;

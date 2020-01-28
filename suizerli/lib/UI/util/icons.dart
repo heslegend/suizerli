@@ -11,7 +11,7 @@
 ///      fonts:
 ///       - asset: fonts/SuizerliLogo.ttf
 ///
-/// 
+///
 ///
 import 'package:flutter/widgets.dart';
 

@@ -4,9 +4,9 @@ import 'package:suizerli/BLOC/authentication/authentication_bloc.dart';
 import 'package:suizerli/BLOC/authentication/authentication_event.dart';
 import 'package:suizerli/BLOC/mail/mail_bloc.dart';
 import 'package:suizerli/Repository/user_repository.dart';
-import 'package:suizerli/UI/authentication/sign_in_form.dart';
-import 'package:suizerli/UI/authentication/sign_up_form.dart';
-import 'package:suizerli/UI/splash_screen.dart';
+import 'package:suizerli/UI/authentication_screen/sign_in_form.dart';
+import 'package:suizerli/UI/authentication_screen/sign_up_form.dart';
+import 'package:suizerli/UI/splash_screen/splash_screen.dart';
 
 import 'mail_form.dart';
 

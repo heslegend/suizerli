@@ -26,7 +26,7 @@ class _MyProfileState extends State<MyProfile> {
     return Padding(
       padding: EdgeInsets.fromLTRB(80, 20, 50, 50),
       child: Text(
-        'Welcome to suizerli!',
+        'Welcome to suizerli',
         style: TextStyle(
             fontSize: 50, fontStyle: FontStyle.normal, color: Colors.teal),
       ),
@@ -56,4 +56,5 @@ class _MyProfileState extends State<MyProfile> {
       print(e);
     }
   }
+
 }

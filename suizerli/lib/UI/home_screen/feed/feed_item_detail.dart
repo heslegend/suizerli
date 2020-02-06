@@ -26,7 +26,7 @@ class _FeedItemDetailState extends State<FeedItemDetail> {
                 child: Card(
                   color: Colors.white.withOpacity(0.2),
                   child: Card(
-                    color: Colors.white,semanticContainer: true,
+                    color: Colors.black.withOpacity(0.6),semanticContainer: true,
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
                     elevation: 5,
@@ -41,10 +41,13 @@ class _FeedItemDetailState extends State<FeedItemDetail> {
                               'https://picsum.photos/300?grayscale&blur',
                               fit: BoxFit.cover,
                             )),
-                        Text(
-                          "Why maldon salt is the best salt!",
-                          style: TextStyle(
-                              fontFamily: 'SegoeUi', fontSize: 20.0, color: Colors.teal),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Why maldon salt is the best salt!",
+                            style: TextStyle(
+                                fontFamily: 'SegoeUi', fontSize: 20.0, color: Colors.white),
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),

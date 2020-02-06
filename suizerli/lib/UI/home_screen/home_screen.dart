@@ -1,16 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:suizerli/Repository/user_repository.dart';
 import 'package:suizerli/UI/home_screen/feed/feed_widget.dart';
-import 'package:suizerli/UI/home_screen/profile_widget.dart';
 import 'package:suizerli/UI/home_screen/notifications_widget.dart';
 import 'package:suizerli/UI/home_screen/post/post_fab.dart';
+import 'package:suizerli/UI/home_screen/profile_widget.dart';
 
 import 'explore_widget.dart';
 
 class HomeScreen extends StatefulWidget {
-  final String name;
+  final _userRepository;
 
-  HomeScreen({@required this.name});
+  HomeScreen({@required UserRepository userRepository})
+      : assert(userRepository != null),
+        _userRepository = userRepository;
 
   @override
   State<StatefulWidget> createState() => _HomeScreenState();
@@ -18,6 +21,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _bottomNavigationIndex = 0;
+
   static List<Widget> _widgetOptions = <Widget>[
     MyFeed(),
     Explore(),
@@ -28,9 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _buildPageView(),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: PostFAB(),
+      floatingActionButton: PostFAB(userRepository: widget._userRepository,),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         notchMargin: 4.0,
@@ -58,6 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
           onTap: onBottomNavigationItemTapped,
           fixedColor: Colors.teal,
           unselectedItemColor: Colors.grey,
+          backgroundColor: Colors.black,
           type: BottomNavigationBarType.fixed,
         ),
       ),

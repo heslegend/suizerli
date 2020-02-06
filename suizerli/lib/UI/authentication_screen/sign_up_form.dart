@@ -73,7 +73,7 @@ class _SignUpFormState extends State<SignUpForm> {
             )),
         validator: (value) =>
             value.isEmpty ? 'Username can\'t be empty!' : null,
-        onSaved: (value) => _password = value.trim(),
+        onSaved: (value) => _username = value.trim(),
       ),
     );
   }
@@ -114,6 +114,6 @@ class _SignUpFormState extends State<SignUpForm> {
 
   void _submitPasswordAndEmail() {
     if (_formKey.currentState.validate()) _formKey.currentState.save();
-    _mailBloc.add(NewUserSubmitted(password: _password));
+    _mailBloc.add(NewUserSubmitted(username: _username, password: _password));
   }
 }

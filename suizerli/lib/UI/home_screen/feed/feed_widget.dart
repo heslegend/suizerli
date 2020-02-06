@@ -59,7 +59,7 @@ class _MyFeedState extends State<MyFeed> {
   Widget categoryNavigationHeader() {
     return SliverAppBar(
       floating: true,
-      expandedHeight: 200.0,
+      expandedHeight: 150.0,
       pinned: true,
       title: Text("SUIZERLI."),
       flexibleSpace: FlexibleSpaceBar(
@@ -67,6 +67,7 @@ class _MyFeedState extends State<MyFeed> {
         background: _categoryImages[currentIndex],
       ),
       bottom: categoryNavigationTabBar(),
+      backgroundColor: Colors.black,
     );
   }
 
@@ -82,7 +83,7 @@ class _MyFeedState extends State<MyFeed> {
 
   Widget recommendationList() {
     return SliverFixedExtentList(
-      itemExtent: 275.0,
+      itemExtent: 150.0,
       delegate: SliverChildBuilderDelegate(
         (BuildContext context, int index) {
           return Container(

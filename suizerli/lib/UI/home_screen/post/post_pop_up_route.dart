@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:suizerli/UI/home_screen/post/post_widget.dart';
 
 class PostPopUpRoute extends PopupRoute {
-  static const double frostAnimationStartValue = 0.0;
+  static const double frostAnimationStartValue = 10.0;
   static const double frostAnimationEndValue = 10.0;
 
   @override
@@ -17,7 +17,7 @@ class PostPopUpRoute extends PopupRoute {
   String get barrierLabel => "Close";
 
   @override
-  Duration get transitionDuration => const Duration(milliseconds: 300);
+  Duration get transitionDuration => const Duration(milliseconds: 50);
 
   @override
   Widget buildTransitions(BuildContext context, Animation<double> animation,
@@ -44,9 +44,10 @@ class FrostTransition extends AnimatedWidget {
 
   @override
   Widget build(BuildContext context) => new BackdropFilter(
-    filter: ImageFilter.blur(sigmaX: animation.value, sigmaY: animation.value),
-    child: new Container(
-      child: child,
-    ),
-  );
+        filter:
+            ImageFilter.blur(sigmaX: animation.value, sigmaY: animation.value),
+        child: new Container(
+          child: child,
+        ),
+      );
 }

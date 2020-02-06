@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
           else if (state is Unauthenticated)
             return AuthenticationScreen(userRepository: _userRepository);
           else if (state is Authenticated)
-            return HomeScreen();
+            return HomeScreen(userRepository: _userRepository,);
           else
             return Container(child: Text("Ouuups - something went wrong"));
         },

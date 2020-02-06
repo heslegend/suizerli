@@ -8,7 +8,6 @@ import '../util/show_logo.dart';
 
 class SignInForm extends StatefulWidget {
   final UserRepository _userRepository;
-  final _formKey = GlobalKey<FormState>();
 
   SignInForm({
     Key key,

@@ -51,6 +51,7 @@ class MailBloc extends Bloc<MailEvent, MailState> {
 
   Stream<MailState> _mapNewUserSubmittedToState(String username, String password) async* {
     await _userRepository.signUp(password: password);
+    await _userRepository.setUserName(username);
     yield SignedUp();
   }
 
